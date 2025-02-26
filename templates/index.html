@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form class="w-50" action="" method="post">
+        {% csrf_token %}    
+        {{form.first_name|as_crispy_field}}
+        {{form.last_name|as_crispy_field}}
+        {{form.email|as_crispy_field}}
+        {{form.username|as_crispy_field}}
+        <div class="msg hidden"></div>
+        {{form.password1|as_crispy_field}}
+        {{form.password2|as_crispy_field}}
+        <button type="submit">Create</button>
+    </form>
+    <script src="{% static 'js/index.js' %}"></script>
+</div>
+</body>
+</html>
