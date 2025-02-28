@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse,JsonResponse
 from .forms import UserSignUpForm,UserLoginForm
 from django.contrib.auth.models import User
@@ -18,7 +18,7 @@ def userSignUpView(request):
                                 username=fm.cleaned_data['username'],
                                 password=fm.cleaned_data['password1'])
             
-            return HttpResponse('Account Created')
+            return redirect('login')
         
     return render(request,'index.html',{'form':fm})
 

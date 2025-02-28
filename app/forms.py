@@ -12,6 +12,7 @@ class UserSignUpForm(forms.Form):
     username=forms.CharField(max_length=200)
     password1=forms.CharField(max_length=100,widget=forms.PasswordInput)
     password2=forms.CharField(max_length=100,widget=forms.PasswordInput)
+    
 
 class UserLoginForm(forms.Form):
     username=forms.CharField(max_length=100)
